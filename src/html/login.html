@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安防星全景界面中心登录界面</title>
+    <link rel="stylesheet" type="text/css" href="../css/loginCss.css">
+</head>
+<body style="background-image: url('../res/img/login_background.jpg');background-size: cover">
+
+<div class="container">
+    <div id="loginDiv">
+            <p class="title-up">登  录</p>
+            <div style="height: 20%"></div>
+            <div style="height: 50%">
+                <p class="inputP"> 帐 号 : <input  id="username" class="inputClass" type="text" name="userName" value="hangzhou"/></p>
+                <p class="inputP"> 密 码 : <input id="password" class="inputClass" type="password" name="userPass" value="12345678"/></p>
+                <p class="tip"><input id="autoLogin" type="checkbox" value="1" name="remember" checked="checked"/>下次自动登录</p>
+                <div style="height: 20%"></div>
+                <button id="loginBtn" class="inputButton">登&nbsp;录</button>
+            </div>
+            <div style="height: 20%"></div>
+    </div>
+</div>
+
+<script src="../lib/jquery-3.2.1.min.js"></script>
+<script src="../lib/md5.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</body>
+</html>

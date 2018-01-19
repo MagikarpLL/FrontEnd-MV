@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>安防星全景界面</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="SHORTCUT ICON" href="../res/img/webIcon.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/view.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.min.css">
+</head>
+<body>
+
+<div id="mainDiv" style="height: 100%;">
+
+    <img id="returnImg" src="../res/img/view/return.png">
+    <img id="measureImg" src="../res/img/view/measure.png">
+    <img id="superpositionImg" src="../res/img/view/superpositionNoShow.png">
+    <img id="infraredImg" src="../res/img/view/infraredNoShow.png">
+    <img id="mapImg" src="../res/img/view/mapNoShow.png">
+    <img id="panoramaImg" src="../res/img/view/panoramaShow.png">
+    <img id="fullscreenImg" src="../res/img/view/fullscreen.png">
+    <img id="exitFullscreenImg" src="../res/img/view/exitFullscreen.png">
+
+    <!--编辑文字用的canvas-->
+    <input type="text" id="tempInput" class="inputCanvas" autofocus="autofocus" width="auto"/>
+
+    <div id="showDiv" >
+        <img id="editImg" src="../res/img/view/edit.png">
+        <img id="selectImg" src="../res/img/view/selectPos.png">
+    </div>
+    <div id="editDiv" style="display: none">
+        <div id="spanDiv" class="spanClass">
+            <img id="backEditImg" src="../res/img/view/backEdit.png">
+            <div id="picker-wrapper" style="display: none">
+                <div id="picker"></div>
+                <div id="picker-indicator"></div>
+            </div>
+            <div id="slider-wrapper">
+                <div id="slider"></div>
+                <div id="slider-indicator"></div>
+            </div>
+            <img id="textImgEdit" src="../res/img/view/text.png">
+            <img id="rubberImgEdit" src="../res/img/view/rubber.png">
+            <img id="lineImgEdit" src="../res/img/view/line.png">
+            <img id="waterImgEdit" src="../res/img/view/water.png">
+            <img id="fireHydrantImgEdit" src="../res/img/view/fireHydrant.png">
+            <img id="fireEngineImgEdit" src="../res/img/view/fireEngine.png">
+        </div>
+    </div>
+    <div id="measureDiv" style="display: none">
+        <img id="distanceImg" src="../res/img/view/distance.png">
+        <img id="heightImg" src="../res/img/view/height.png">
+        <img id="areaImg" src="../res/img/view/area.png">
+        <img id="backMeasureImg" src="../res/img/view/backEdit.png">
+    </div>
+    <div id="selectDiv" class="scrollBar">
+        <!--<div style="background-image: url()" class="listDetailDiv" onclick="selectDivClick()"><span class="timeSpan">time</span></div>-->
+        <!--<img src="../res/img/view/listExample.png" class="listDetailImg">-->
+    </div>
+
+    <!-- 悬浮的显示div -->
+    <!--<div id="emmm" class="arrow_box">-->
+        <!--<span>这里放置美国大力龙泡沫车</span>-->
+        <!--<span><img class="text_delimg" src="../res/img/icon/text_delete.png"></span>-->
+    <!--</div>-->
+
+    <!--拦截点击事件图层-->
+    <!--<div id="listenerDiv" style="position:absolute;width: 100%;height: 100%;resize: both;z-index:7;top: 0px;right: 0px;left: 0px;bottom: 0px;"></div>-->
+    <!--全景图层-->
+    <div id="container" style="width:100%;height:100%;z-index: 5;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;"></div>
+    <!--高德图层-->
+    <div id="mapContainer" style="width:100%; height:100%;resize:both;z-index: 6;display: none;opacity: 0.7;pointer-events: none;"></div>
+    <!--测量图层-->
+    <!--<canvas id="measureCanvas" style="width:100%; height:100%;resize:both;z-index: 7;display: none;pointer-events: none;"></canvas>-->
+
+</div>
+
+<script src="../lib/jquery-3.2.1.min.js"></script>
+<script src="../lib/colorpicker.min.js"></script>
+<script src="../lib/three.js"></script>
+<script src="../lib/jquery.mCustomScrollbar.min.js"></script>
+<script language="javascript" src="//webapi.amap.com/maps?v=1.4.3&key=895fa0f333a8d4f54f40f2e7f832027d&plugin=AMap.ControlBar"></script>
+
+<script type="text/javascript" src="../js/utils.js"></script>
+<script type="text/javascript" src="../js/panorama.js"></script>
+<script type="text/javascript" src="../js/view.js"></script>
+</body>
+</html>

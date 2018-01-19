@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安防星全景界面</title>
+
+    <script src="lib/require.js"></script>
+    <script src="requirejs_config.js"></script>
+
+    <script>
+        require(['ids360Viewer', 'database'], function (ids360Viewer, database) {
+            function getRequest() {
+                var url = location.search; //获取url中"?"符后的字串
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    var strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+
+            var param = getRequest();
+            var stageId = param.stageId;
+            var sceneIds = param.sceneIds;
+            var sceneId = param.sceneId;
+
+            database.init("http://secpano.indoorstar.com:6628/sec/pano/", param.userSn, "2CC772253C0F8F35744437A03897564F");
+            ids360Viewer.init(document.getElementById('container'));
+            ids360Viewer.animate();
+            if (stageId) {
+                ids360Viewer.loadStage(stageId, sceneId);
+            } else if (sceneIds) {
+                ids360Viewer.loadScenes(sceneIds, sceneId);
+            }
+        });
+    </script>
+
+</head>
+<body>
+<div id="container" style="width:100%;height:100%;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;">
+
+</div>
+<div style="position: absolute;">
+    <button class='switchPanoVisibilityButton' type="button">显示/隐藏LayerPano</button>
+    <button class='enterCameraMode' type="button">设置Camera模式</button>
+    <button class='enterDrawlineMode' type="button">设置Drawline模式</button>
+    <button class='enterEraseMode' type="button">设置Erase模式</button>
+</div>
+</body>
+</html>
