@@ -17,41 +17,41 @@ body {
     position: fixed;
     left:20px;
     top:20px;
-    height: 39px;
+    width: 50px;
 }
 #switchLayer{
     position: fixed;
     left:80px;
     top:20px;
-    height: 39px;
+    width: 50px;
 }
 
 #editImg{
     position: fixed;
     right:18px;
     top:80px;
-    width: 30px;
+    width: 40px;
 }
 
 #measureImg{
     position: fixed;
-    right:20px;
+    right:22px;
     top:140px;
-    width: 24px;
+    width: 32px;
 }
 
 #selectImg{
     position: fixed;
     left:20px;
     bottom:20px;
-    width: 46px;
+    width: 50px;
 }
 
 #fullscreenImg{
     position: fixed;
-    right:20px;
+    right:22px;
     top:20px;
-    width: 24px;
+    width: 32px;
     z-index: 12;
 }
 #exitFullscreenImg{

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安防星全景界面</title>
+    <style type="text/css">
+        body, html
+        {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+        }
+    </style>
+    <script>
+        function loadScene(sceneId, sceneIds) {
+            var newHash = "sceneId=" + sceneId + "&" +
+                "sceneIds=" + sceneIds + "&" +
+                "userSn=" + "F10BB1A6-2FE1-482D-B106-32B5A2CEB89A";
+            document.getElementById('ids360Viewer').contentWindow.location.hash = newHash;
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="loadScene(173,'[169,170,171,172,173]')">跳转1</button>
+<button onclick="loadScene(167,'[166,167,168]')">跳转2</button>
+<button onclick="loadScene(undefined,'[166,167,168]')">跳转3</button>
+<iframe id="ids360Viewer" src="http://localhost:63342/ids360Viewer/lib/html/view.html?stageId=0&sceneId=0&userSn=F10BB1A6-2FE1-482D-B106-32B5A2CEB89A" frameborder="0" height="100%" width="100%"></iframe>
+</body>
+</html>

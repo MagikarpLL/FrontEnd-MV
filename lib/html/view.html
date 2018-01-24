@@ -5,9 +5,9 @@
     <title>安防星全景界面</title>
 
     <script src="../lib/require.js"></script>
-    <script src="../js/ids360Viewer.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/view.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.min.css">
+    <script src="requirejs_config.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/css/view.css"/>
+    <link rel="stylesheet" type="text/css" href="../src/css/jquery.mCustomScrollbar.min.css">
 
     <script>
         require(['ids360Viewer', 'database', 'jquery'], function (ids360Viewer, database, $) {
@@ -79,7 +79,7 @@
     <img id="panoramaImg" src="../res/img/view/panoramaShow.png">
 
     <!--编辑文字用的canvas-->
-    <input type="text" id="textInput" class="textInput" autofocus="autofocus" width="auto"/>
+    <input type="text" id="textInput" class="textInput" autofocus="autofocus" width="auto" onkeypress="enterPress(event)"/>
 
     <div id="editDiv" style="display: none">
         <div id="spanDiv" class="editClass">
@@ -109,9 +109,12 @@
     <div id="selectDiv" class="scrollBar">
     </div>
 
+
+
     <div id="heightDiv"></div>
     <div id="distanceDiv"></div>
     <div id="areaDiv"></div>
+    <div id="textDiv"></div>
 
     <!--全景图层-->
     <div id="threeJsContainer" style="width:100%;height:100%;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;z-index: 5;"></div>

@@ -1,2 +1,2 @@
-node r.js -o ../requirejs_build.conf
+node r.js -o requirejs_build.conf
 pause
