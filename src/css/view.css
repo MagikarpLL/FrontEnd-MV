@@ -10,6 +10,8 @@ body {
     background-color: #000000;
     margin: 0px;
     overflow: hidden;
+
+    user-select: none;
 }
 
 /* main button */
@@ -17,41 +19,41 @@ body {
     position: fixed;
     left:20px;
     top:20px;
-    height: 39px;
+    width: 50px;
 }
 #switchLayer{
     position: fixed;
     left:80px;
     top:20px;
-    height: 39px;
+    width: 50px;
 }
 
 #editImg{
     position: fixed;
-    right:18px;
-    top:80px;
+    right:20px;
+    top:85px;
     width: 30px;
 }
 
 #measureImg{
     position: fixed;
     right:20px;
-    top:140px;
-    width: 24px;
+    top:153px;
+    width: 30px;
 }
 
 #selectImg{
     position: fixed;
     left:20px;
     bottom:20px;
-    width: 46px;
+    width: 55px;
 }
 
 #fullscreenImg{
     position: fixed;
     right:20px;
     top:20px;
-    width: 24px;
+    width: 28px;
     z-index: 12;
 }
 #exitFullscreenImg{
@@ -59,7 +61,7 @@ body {
     position: fixed;
     right:20px;
     top:20px;
-    width: 24px;
+    width: 28px;
     z-index: 12;
 }
 
@@ -68,7 +70,7 @@ body {
     position: fixed;
     right:14px;
     bottom:20px;
-    width: 35px;
+    width: 40px;
 }
 
 #infraredImg{
@@ -76,7 +78,7 @@ body {
     z-index: 12;
     right:69px;
     bottom:20px;
-    width: 35px;
+    width: 40px;
 }
 
 #mapImg{
@@ -84,7 +86,7 @@ body {
     z-index: 12;
     right:124px;
     bottom:20px;
-    width: 35px;
+    width: 40px;
 }
 
 #panoramaImg{
@@ -92,21 +94,21 @@ body {
     z-index: 12;
     right:179px;
     bottom:20px;
-    width: 35px;
+    width: 40px;
 }
 
 /* edit div */
 .editClass{
 
     position: fixed;
-    top:80px;
+    top:85px;
     right:22px;
 
-    width: 20px;
-    height:405px;
+    width: 26px;
+    height:470px;
     background-color: white;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 14px;
 
     display: flex;
     flex-direction: column-reverse;
@@ -114,43 +116,43 @@ body {
     align-items: center;
     flex-wrap: nowrap;
 
-    z-index: 12;
+    z-index: 13;
 }
 
 #backEditImg{
-    width:16px;
+    width:22px;
     margin-bottom: 5px;
 }
 
 #textImg{
-    width: 18px;
+    width: 24px;
     margin-bottom: 10px;
 }
 
 #rubberImg{
-    width: 18px;
+    width: 24px;
     margin-bottom: 10px;
 }
 
 #lineImg{
-    width: 18px;
+    width: 24px;
     margin-bottom: 10px;
 }
 
 #fireEngineImg{
     margin-bottom: 10px;
-    width: 18px;
+    width: 24px;
     margin-top: 5px;
 }
 
 #fireHydrantImg{
     margin-bottom: 10px;
-    width: 18px;
+    width: 24px;
 }
 
 #waterImg{
     margin-bottom: 10px;
-    width: 18px;
+    width: 24px;
 }
 
 /* color picker */
@@ -196,6 +198,8 @@ body {
     justify-content: center;
 
     background-color: rgba(10,10,10,0.7);
+
+    z-index:13;
 }
 
 .listDetailDiv{
@@ -224,7 +228,7 @@ body {
 /* text input */
 .textInput{
     border-style: none;
-    background: rgba(50,50,50,0.8);
+    background: rgba(0,0,0,0.6);
     color: #ff7200;
     font-size: 14px;
     padding:5px 10px;
@@ -239,14 +243,14 @@ body {
 /* measure div */
 #measureDiv{
     position: fixed;
-    top:140px;
+    top:163px;
     right:22px;
 
-    width: 20px;
-    height:145px;
+    width: 26px;
+    height:190px;
     background-color: white;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 14px;
 
     display: flex;
     flex-direction: column;
@@ -254,28 +258,28 @@ body {
     align-items: center;
     flex-wrap: nowrap;
 
-    z-index: 12;
+    z-index: 13;
 }
 
 #backMeasureImg{
-    width:16px;
-    margin-bottom: 5px;
+    width:22px;
+    margin-bottom: 10px;
 }
 
 #distanceImg{
-    width: 18px;
-    margin-bottom: 10px;
+    width: 24px;
+    margin-bottom: 15px;
     margin-top: 10px;
 }
 
 #heightImg{
-    width: 18px;
-    margin-bottom: 10px;
+    width: 24px;
+    margin-bottom: 15px;
 }
 
 #areaImg{
-    width: 18px;
-    margin-bottom: 10px;
+    width: 24px;
+    margin-bottom: 15px;
 }
 
 /* 悬浮div样式 */
@@ -289,7 +293,7 @@ body {
     border: solid 1px #ccc;
     padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:15;
+    z-index:12;
 }
 
 .delimg{
@@ -304,9 +308,9 @@ body {
     line-height: 14px;
     background: #fff;
     border: solid 1px #ccc;
-    padding: 3px 2px 3px 2px;
+    padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:15;
+    z-index:12;
 }
 
 /* 红色圆圈 */
@@ -315,7 +319,7 @@ body {
     height: 12px;
     overflow: hidden;
     position: absolute;
-    z-index: 15;
+    z-index: 12;
 }
 
 /* 每一个的长度label */
@@ -323,12 +327,18 @@ body {
     position:absolute;
     display: inline;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 12px;
     background: #fff;
     border: solid 1px #ccc;
-    padding: 3px 2px 3px 2px;
+    padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:15;
+    z-index:12;
+    text-align: center;
+}
+
+.destroyImg{
+    width:12px;
+    margin-left: 4px;
 }
 
 /* arrow_box 三角箭头样式 */
@@ -338,7 +348,7 @@ body {
     top:50px;
     padding:5px 10px;
 
-    background: rgba(50,50,50,0.8);
+    background: rgba(0,0,0,0.6);
     display: inline;
     font-size: 14px;
     color:#ff7200;
@@ -367,7 +377,7 @@ body {
 
 .arrow_box:before{
     border-color: rgba(194,225,245,0);
-    border-top-color: rgba(50,50,50,0.8);
+    border-top-color: rgba(0,0,0,0.6);
     border-width: 10px;
     margin-left: -10px;
 }

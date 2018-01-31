@@ -32,17 +32,6 @@
                 $('#exitFullscreenImg').remove();
             }
 
-            window.addEventListener('hashchange', function () {
-                var newParam = getRequest(location.hash);
-                if (newParam.sceneIds != param.sceneIds) {
-                    ids360Viewer.loadScenes(newParam.sceneIds, newParam.sceneId);
-                    ids360Viewer.showScene(undefined);
-                } else if (newParam.sceneId != param.sceneId) {
-                    ids360Viewer.showScene(newParam.sceneId);
-                }
-                param = newParam;
-            }, true);
-
             database.init("http://secpano.indoorstar.com:6628/sec/pano/", param.userSn, "2CC772253C0F8F35744437A03897564F");
             ids360Viewer.init(document);
             ids360Viewer.animate();
@@ -55,35 +44,35 @@
     </script>
 
 </head>
-<body ondragstart="return false;" oncontextmenu="return false;">
+<body ondragstart="return false;" oncontextmenu="return false;" style="user-select: none;">
 
 
-<img id="returnImg" src="../res/img/view/return.png">
-<img id="switchLayer" src="../res/img/view/switchlayer.png">
+<img id="returnImg" src="resource/ids360Viewer/img/view/return.png">
+<img id="switchLayer" src="resource/ids360Viewer/img/view/switchlayer.png">
 
-<img id="fullscreenImg" src="../res/img/view/fullscreen.png">
-<img id="exitFullscreenImg" src="../res/img/view/exitFullscreen.png">
+<img id="fullscreenImg" src="resource/ids360Viewer/img/view/fullscreen.png">
+<img id="exitFullscreenImg" src="resource/ids360Viewer/img/view/exitFullscreen.png">
 
 <!--地图图层-->
 <div id="mapMarkerContainer" style="opacity:0;width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;resize:both;z-index: 7;"></div>
 
 <div id="mainDiv" style="opacity:0;height:100%">
 
-    <img id="measureImg" src="../res/img/view/measure.png">
-    <img id="editImg" src="../res/img/view/edit.png">
-    <img id="selectImg" src="../res/img/view/selectPos.png">
+    <img id="measureImg" src="resource/ids360Viewer/img/view/measure.png">
+    <img id="editImg" src="resource/ids360Viewer/img/view/edit.png">
+    <img id="selectImg" src="resource/ids360Viewer/img/view/selectPos.png">
 
-    <img id="superpositionImg" src="../res/img/view/superpositionNoShow.png">
-    <img id="infraredImg" src="../res/img/view/infraredNoShow.png">
-    <img id="mapImg" src="../res/img/view/mapNoShow.png">
-    <img id="panoramaImg" src="../res/img/view/panoramaShow.png">
+    <img id="superpositionImg" src="resource/ids360Viewer/img/view/superpositionNoShow.png">
+    <img id="infraredImg" src="resource/ids360Viewer/img/view/infraredNoShow.png">
+    <img id="mapImg" src="resource/ids360Viewer/img/view/mapNoShow.png">
+    <img id="panoramaImg" src="resource/ids360Viewer/img/view/panoramaShow.png">
 
     <!--编辑文字用的canvas-->
     <input type="text" id="textInput" class="textInput" autofocus="autofocus" width="auto" onkeypress="enterPress(event)"/>
 
     <div id="editDiv" style="display: none">
         <div id="spanDiv" class="editClass">
-            <img id="backEditImg" src="../res/img/view/backEdit.png">
+            <img id="backEditImg" src="resource/ids360Viewer/img/view/backEdit.png">
             <div id="picker-wrapper" style="display: none">
                 <div id="picker"></div>
                 <div id="picker-indicator"></div>
@@ -92,19 +81,19 @@
                 <div id="slider"></div>
                 <div id="slider-indicator"></div>
             </div>
-            <img id="textImg" src="../res/img/view/text.png">
-            <img id="rubberImg" src="../res/img/view/rubber.png">
-            <img id="lineImg" src="../res/img/view/line.png">
-            <img id="waterImg" src="../res/img/view/water.png">
-            <img id="fireHydrantImg" src="../res/img/view/fireHydrant.png">
-            <img id="fireEngineImg" src="../res/img/view/fireEngine.png">
+            <img id="textImg" src="resource/ids360Viewer/img/view/text.png">
+            <img id="rubberImg" src="resource/ids360Viewer/img/view/rubber.png">
+            <img id="lineImg" src="resource/ids360Viewer/img/view/line.png">
+            <img id="waterImg" src="resource/ids360Viewer/img/view/water.png">
+            <img id="fireHydrantImg" src="resource/ids360Viewer/img/view/fireHydrant.png">
+            <img id="fireEngineImg" src="resource/ids360Viewer/img/view/fireEngine.png">
         </div>
     </div>
     <div id="measureDiv" style="display: none">
-        <img id="distanceImg" src="../res/img/view/distance.png">
-        <img id="heightImg" src="../res/img/view/height.png">
-        <img id="areaImg" src="../res/img/view/area.png">
-        <img id="backMeasureImg" src="../res/img/view/backEdit.png">
+        <img id="distanceImg" src="resource/ids360Viewer/img/view/distance.png">
+        <img id="heightImg" src="resource/ids360Viewer/img/view/height.png">
+        <img id="areaImg" src="resource/ids360Viewer/img/view/area.png">
+        <img id="backMeasureImg" src="resource/ids360Viewer/img/view/backEdit.png">
     </div>
     <div id="selectDiv" class="scrollBar">
     </div>

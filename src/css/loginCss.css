@@ -31,7 +31,7 @@ html, body {
 }
 
 .title-up {
-    background-image: url('../res/img/login-title.png');
+    background-image: url('../html/resource/ids360Viewer/img/login-title.png');
     background-size: 40% 30px;
     background-repeat: no-repeat;
     background-position: top;
