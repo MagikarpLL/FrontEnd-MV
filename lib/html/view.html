@@ -10,95 +10,132 @@
     <link rel="stylesheet" type="text/css" href="../src/css/jquery.mCustomScrollbar.min.css">
 
     <script>
-        require(['ids360Viewer', 'database', 'jquery'], function (ids360Viewer, database, $) {
-            function getRequest(url) {
-                var theRequest = new Object();
-                var index = url.indexOf("?");
-                if (index < 0) index = url.indexOf("#");
-                if (index >= 0) {
-                    var str = url.substr(index + 1);
-                    var strs = str.split("&");
-                    for (var i = 0; i < strs.length; i++) {
-                        theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+        require(['amap']);
+        window.onload = function () {
+            var root = document;
+            var maxElement = root.getElementById('ids360Viewer');
+            var mapElement = root.getElementById('mapMarkerContainer');
+            var overlayElement = root.getElementById('mapMarkerOverlay');
+            var panoElement = root.getElementById('mainDiv');
+            var containerElement = root.getElementById('threeJsContainer');
+
+            require(['ids360Viewer', 'database', 'jquery'], function (ids360Viewer, database, $) {
+                function getRequest(url) {
+                    var theRequest = new Object();
+                    var index = url.indexOf("?");
+                    if (index < 0) index = url.indexOf("#");
+                    if (index >= 0) {
+                        var str = url.substr(index + 1);
+                        var strs = str.split("&");
+                        for (var i = 0; i < strs.length; i++) {
+                            theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                        }
                     }
+                    return theRequest;
                 }
-                return theRequest;
-            }
 
-            var param = getRequest(location.href);
-            if (param.hideReturn) {
-                $('#returnImg').remove();
-                $('#fullscreenImg').remove();
-                $('#exitFullscreenImg').remove();
-            }
+                var param = getRequest(location.href);
+                if (param.hideReturn) {
+                    $('#returnImg').remove();
+                    $('#fullscreenImg').remove();
+                    $('#exitFullscreenImg').remove();
+                }
 
-            database.init("http://secpano.indoorstar.com:6628/sec/pano/", param.userSn, "2CC772253C0F8F35744437A03897564F");
-            ids360Viewer.init(document);
-            ids360Viewer.animate();
-            if (param.stageId) {
-                ids360Viewer.loadStage(param.stageId, param.sceneId);
-            } else if (param.sceneIds) {
-                ids360Viewer.loadScenes(param.sceneIds, param.sceneId);
-            }
-        });
+                database.init("http://secpano.indoorstar.com:6628/sec/pano/", param.userSn, "2CC772253C0F8F35744437A03897564F");
+                ids360Viewer.setElements(maxElement, mapElement, overlayElement, panoElement, containerElement);
+                ids360Viewer.init(root);
+                ids360Viewer.container.getLayer("LayerCompass").offset = [25, 90];
+                ids360Viewer.loadAmap();
+                ids360Viewer.animate();
+                if (param.stageId) {
+                    ids360Viewer.loadStage(param.stageId, param.sceneId);
+                } else if (param.sceneIds) {
+                    ids360Viewer.loadScenes(param.sceneIds, param.sceneId);
+                }
+            });
+        };
     </script>
 
 </head>
-<body ondragstart="return false;" oncontextmenu="return false;" style="user-select: none;">
+<body id="ids360Viewer" ondragstart="return false;" oncontextmenu="return false;" style="user-select: none;">
 
+<!--顶部按钮-->
+<div id="toolbarTop">
+    <img id="returnImg" src="resource/ids360Viewer/img/view/button_return.png">
+    <img id="switchLayer" src="resource/ids360Viewer/img/view/button_switchlayer.png">
 
-<img id="returnImg" src="resource/ids360Viewer/img/view/return.png">
-<img id="switchLayer" src="resource/ids360Viewer/img/view/switchlayer.png">
-
-<img id="fullscreenImg" src="resource/ids360Viewer/img/view/fullscreen.png">
-<img id="exitFullscreenImg" src="resource/ids360Viewer/img/view/exitFullscreen.png">
+    <img id="fullscreenImg" src="resource/ids360Viewer/img/view/button_fullscreen.png">
+    <img id="exitFullscreenImg" src="resource/ids360Viewer/img/view/button_exitFullscreen.png">
+</div>
 
 <!--地图图层-->
-<div id="mapMarkerContainer" style="opacity:0;width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;resize:both;z-index: 7;"></div>
+<div id="mapMarkerContainer" style="opacity:0;width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0;right: 0;left: 0;bottom: 0;resize:both;z-index: 7;"></div>
+<div id="mapMarkerOverlay" style="opacity:0;width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0;right: 0;left: 0;bottom: 0;resize:both;z-index: 8;"></div>
 
+<!--全景图操作-->
 <div id="mainDiv" style="opacity:0;height:100%">
+    <img id="sceneSelectIcon" src="resource/ids360Viewer/img/view/button_selectPos.png">
 
-    <img id="measureImg" src="resource/ids360Viewer/img/view/measure.png">
-    <img id="editImg" src="resource/ids360Viewer/img/view/edit.png">
-    <img id="selectImg" src="resource/ids360Viewer/img/view/selectPos.png">
-
-    <img id="superpositionImg" src="resource/ids360Viewer/img/view/superpositionNoShow.png">
-    <img id="infraredImg" src="resource/ids360Viewer/img/view/infraredNoShow.png">
-    <img id="mapImg" src="resource/ids360Viewer/img/view/mapNoShow.png">
-    <img id="panoramaImg" src="resource/ids360Viewer/img/view/panoramaShow.png">
+    <!--右下角-->
+    <div id="toolbarBottomRight">
+        <img class="layerIcon" id="panoLayerIcon" src="resource/ids360Viewer/img/view/layer_panoramaShow.png">
+        <img class="layerIcon" id="mapLayerIcon" src="resource/ids360Viewer/img/view/layer_mapNoShow.png">
+        <img class="layerIcon" id="infraredLayerIcon" src="resource/ids360Viewer/img/view/layer_infraredNoShow.png">
+        <img class="layerIcon" id="compositionLayerIcon" src="resource/ids360Viewer/img/view/layer_superpositionShow.png">
+    </div>
 
     <!--编辑文字用的canvas-->
     <input type="text" id="textInput" class="textInput" autofocus="autofocus" width="auto" onkeypress="enterPress(event)"/>
 
-    <div id="editDiv" style="display: none">
-        <div id="spanDiv" class="editClass">
-            <img id="backEditImg" src="resource/ids360Viewer/img/view/backEdit.png">
-            <div id="picker-wrapper" style="display: none">
-                <div id="picker"></div>
-                <div id="picker-indicator"></div>
+    <!--右上角-->
+    <div id="toolbarTopRight">
+        <!--编辑-->
+        <div id="editSection">
+            <img class="toolbarTopRightIcon" id="editIcon" src="resource/ids360Viewer/img/view/mode_edit.png">
+            <div class="toolbarTopRightPanel" id="editPanel" style="display:none">
+                <img class="toolbarTopRightItem" id="fireEngineImg" src="resource/ids360Viewer/img/view/edit_fireEngine.png">
+                <img class="toolbarTopRightItem" id="fireHydrantImg" src="resource/ids360Viewer/img/view/edit_fireHydrant.png">
+                <img class="toolbarTopRightItem" id="waterImg" src="resource/ids360Viewer/img/view/edit_water.png">
+                <img class="toolbarTopRightItem" id="lineImg" src="resource/ids360Viewer/img/view/edit_line.png">
+                <img class="toolbarTopRightItem" id="textImg" src="resource/ids360Viewer/img/view/edit_text.png">
+                <img class="toolbarTopRightItem" id="rubberImg" src="resource/ids360Viewer/img/view/edit_rubber.png">
+                <div class="toolbarTopRightItem" id="slider-wrapper">
+                    <div id="slider"></div>
+                    <div id="slider-indicator"></div>
+                </div>
+                <div class="toolbarTopRightItem" id="picker-wrapper" style="display: none">
+                    <div id="picker"></div>
+                    <div id="picker-indicator"></div>
+                </div>
+                <img class="toolbarTopRightBack" id="backEditImg" src="resource/ids360Viewer/img/view/backEdit.png">
             </div>
-            <div id="slider-wrapper">
-                <div id="slider"></div>
-                <div id="slider-indicator"></div>
+        </div>
+        <!--测量-->
+        <div id="measureSection">
+            <img class="toolbarTopRightIcon" id="measureIcon" src="resource/ids360Viewer/img/view/mode_measure.png">
+            <div class="toolbarTopRightPanel" id="measurePanel" style="display:none">
+                <img class="toolbarTopRightItem" id="distanceImg" src="resource/ids360Viewer/img/view/measure_distance.png">
+                <img class="toolbarTopRightItem" id="heightImg" src="resource/ids360Viewer/img/view/measure_height.png">
+                <img class="toolbarTopRightItem" id="areaImg" src="resource/ids360Viewer/img/view/measure_area.png">
+                <img class="toolbarTopRightBack" id="backMeasureImg" src="resource/ids360Viewer/img/view/backEdit.png">
             </div>
-            <img id="textImg" src="resource/ids360Viewer/img/view/text.png">
-            <img id="rubberImg" src="resource/ids360Viewer/img/view/rubber.png">
-            <img id="lineImg" src="resource/ids360Viewer/img/view/line.png">
-            <img id="waterImg" src="resource/ids360Viewer/img/view/water.png">
-            <img id="fireHydrantImg" src="resource/ids360Viewer/img/view/fireHydrant.png">
-            <img id="fireEngineImg" src="resource/ids360Viewer/img/view/fireEngine.png">
+        </div>
+        <!--建模-->
+        <div id="modelingSection">
+            <img class="toolbarTopRightIcon" id="modelingIcon" src="resource/ids360Viewer/img/view/mode_modeling.png">
+            <div class="toolbarTopRightPanel" id="modelingPanel" style="display:none">
+                <img class="toolbarTopRightItem" id="modelingHeightImg" src="resource/ids360Viewer/img/view/modeling_height.png">
+                <img class="toolbarTopRightItem" id="modelingShapeImg" src="resource/ids360Viewer/img/view/modeling_shape.png">
+                <img class="toolbarTopRightItem" id="modelingMeshImg" src="resource/ids360Viewer/img/view/modeling_mesh.png">
+                <img class="toolbarTopRightItem" id="modelingMapImg" src="resource/ids360Viewer/img/view/modeling_map.png">
+                <div id="modelingList"></div>
+                <img class="toolbarTopRightBack" id="backModelingImg" src="resource/ids360Viewer/img/view/backEdit.png">
+            </div>
         </div>
     </div>
-    <div id="measureDiv" style="display: none">
-        <img id="distanceImg" src="resource/ids360Viewer/img/view/distance.png">
-        <img id="heightImg" src="resource/ids360Viewer/img/view/height.png">
-        <img id="areaImg" src="resource/ids360Viewer/img/view/area.png">
-        <img id="backMeasureImg" src="resource/ids360Viewer/img/view/backEdit.png">
-    </div>
-    <div id="selectDiv" class="scrollBar">
-    </div>
 
-
+    <div id="selectDiv" class="scrollBar" style="display:none">
+    </div>
 
     <div id="heightDiv"></div>
     <div id="distanceDiv"></div>
@@ -106,9 +143,9 @@
     <div id="textDiv"></div>
 
     <!--全景图层-->
-    <div id="threeJsContainer" style="width:100%;height:100%;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;z-index: 5;"></div>
+    <div id="threeJsContainer" style="width:100%;height:100%;position: absolute;top: 0;right: 0;left: 0;bottom: 0;z-index: 5;"></div>
     <!--高德图层-->
-    <div id="amapContainer" style="width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;opacity: 0.7;pointer-events: none;z-index: 6;"></div>
+    <div id="amapContainer" style="width:100%; height:100%;min-width:1px;min-height:1px;position: absolute;top: 0;right: 0;left: 0;bottom: 0;opacity: 0.7;pointer-events: none;z-index: 6;"></div>
 </div>
 
 

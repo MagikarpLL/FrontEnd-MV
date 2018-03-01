@@ -1,8 +1,8 @@
-html,body{
-    height:100%;
+html, body {
+    height: 100%;
 }
 
-*{
+* {
     z-index: 10;
 }
 
@@ -14,201 +14,87 @@ body {
     user-select: none;
 }
 
-/* main button */
-#returnImg{
-    position: fixed;
-    left:20px;
-    top:20px;
-    width: 50px;
-}
-#switchLayer{
-    position: fixed;
-    left:80px;
-    top:20px;
-    width: 50px;
-}
+/*
+.TTTTTTTTTTTTTTT......OOOOOOO......PPPPPPPPPPPP....
+.TTTTTTTTTTTTTTT....OOOOOOOOOOO....PPPPPPPPPPPPP...
+.TTTTTTTTTTTTTTT...OOOOOOOOOOOOO...PPPPPPPPPPPPPP..
+......TTTTT........OOOOO...OOOOO...PPPPPP..PPPPPP..
+......TTTTT.......OOOOO.....OOOOO..PPPPPP...PPPPP..
+......TTTTT.......OOOOO.....OOOOO..PPPPPP..PPPPPP..
+......TTTTT.......OOOOO.....OOOOO..PPPPPPPPPPPPPP..
+......TTTTT.......OOOOO.....OOOOO..PPPPPPPPPPPPP...
+......TTTTT.......OOOOO.....OOOOO..PPPPPPPPPPPP....
+......TTTTT.......OOOOO.....OOOOO..PPPPPP..........
+......TTTTT........OOOOO...OOOOO...PPPPPP..........
+......TTTTT........OOOOOOOOOOOOO...PPPPPP..........
+......TTTTT.........OOOOOOOOOOO....PPPPPP..........
+......TTTTT...........OOOOOOO......PPPPPP..........
+*/
 
-#editImg{
-    position: fixed;
-    right:20px;
-    top:85px;
-    width: 30px;
-}
-
-#measureImg{
-    position: fixed;
-    right:20px;
-    top:153px;
-    width: 30px;
-}
-
-#selectImg{
-    position: fixed;
-    left:20px;
-    bottom:20px;
-    width: 55px;
-}
-
-#fullscreenImg{
-    position: fixed;
-    right:20px;
-    top:20px;
-    width: 28px;
-    z-index: 12;
-}
-#exitFullscreenImg{
-    display: none;
-    position: fixed;
-    right:20px;
-    top:20px;
-    width: 28px;
-    z-index: 12;
-}
-
-/* layer button */
-#superpositionImg{
-    position: fixed;
-    right:14px;
-    bottom:20px;
-    width: 40px;
-}
-
-#infraredImg{
-    position: fixed;
-    z-index: 12;
-    right:69px;
-    bottom:20px;
-    width: 40px;
-}
-
-#mapImg{
-    position: fixed;
-    z-index: 12;
-    right:124px;
-    bottom:20px;
-    width: 40px;
-}
-
-#panoramaImg{
-    position: fixed;
-    z-index: 12;
-    right:179px;
-    bottom:20px;
-    width: 40px;
-}
-
-/* edit div */
-.editClass{
-
-    position: fixed;
-    top:85px;
-    right:22px;
-
-    width: 26px;
-    height:470px;
-    background-color: white;
-    border-style: none;
-    border-radius: 14px;
-
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-
-    z-index: 13;
-}
-
-#backEditImg{
-    width:22px;
-    margin-bottom: 5px;
-}
-
-#textImg{
-    width: 24px;
-    margin-bottom: 10px;
-}
-
-#rubberImg{
-    width: 24px;
-    margin-bottom: 10px;
-}
-
-#lineImg{
-    width: 24px;
-    margin-bottom: 10px;
-}
-
-#fireEngineImg{
-    margin-bottom: 10px;
-    width: 24px;
-    margin-top: 5px;
-}
-
-#fireHydrantImg{
-    margin-bottom: 10px;
-    width: 24px;
-}
-
-#waterImg{
-    margin-bottom: 10px;
-    width: 24px;
-}
-
-/* color picker */
-#slider-wrapper {
-    width: 10px;
-    height: 150px;
-    position: relative;
-    padding-bottom: 0px;
-    margin-bottom: 5px;
-}
-#slider{
-    width:4px;
-    height: 145px;
-    /*margin-top: 30px;*/
-    margin-left: 3px;
-}
-#slider-indicator {
-    width: 100%;
-    margin-right: 4px;
-
-    height: 10px;
+#returnImg {
     position: absolute;
-    border-radius: 10px;
-    box-shadow: 0px 0px 1px 2px rgba(100,100,100,0.2);
+    left: 20px;
+    top: 20px;
+    width: 56px;
+    z-index: 12;
 }
 
-/* selectDiv */
-#selectDiv{
-    position:fixed;
-    bottom: 100px;
-    left:0px;
-    right:0px;
-
-    height: 100px;
-    width: 100%;
-
-    white-space:nowrap;
-    overflow-x: auto;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-
-    background-color: rgba(10,10,10,0.7);
-
-    z-index:13;
+#switchLayer {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    width: 56px;
+    z-index: 12;
 }
 
-.listDetailDiv{
-    border-width: 2px;
-    border-style: solid;
-    border-color: white;
+#fullscreenImg {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 56px;
+    /*height: 50px;*/
+    z-index: 12;
+}
+
+#exitFullscreenImg {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 56px;
+    /*height: 50px;*/
+    z-index: 12;
+}
+
+/*
+.BBBBBBBBBBBB.........OOOOOOO......TTTTTTTTTTTTTTT..TTTTTTTTTTTTTTT......OOOOOOO......MMMMM.....MMMMM.
+.BBBBBBBBBBBBB......OOOOOOOOOOO....TTTTTTTTTTTTTTT..TTTTTTTTTTTTTTT....OOOOOOOOOOO....MMMMM.....MMMMM.
+.BBBBB....BBBBBB...OOOOOOOOOOOOO...TTTTTTTTTTTTTTT..TTTTTTTTTTTTTTT...OOOOOOOOOOOOO...MMMMMM...MMMMMM.
+.BBBBB.....BBBBB...OOOOO...OOOOO........TTTTT............TTTTT........OOOOO...OOOOO...MMMMMM...MMMMMM.
+.BBBBB....BBBBBB..OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMMMMMM.MMMMMMM.
+.BBBBBBBBBBBBBB...OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMMMMMM.MMMMMMM.
+.BBBBBBBBBBBBB....OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMMMMMMMMMMMMMM.
+.BBBBBBBBBBBBB....OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMM.MMMMMMM.MMM.
+.BBBBB....BBBBBB..OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMM.MMMMMMM.MMM.
+.BBBBB.....BBBBB..OOOOO.....OOOOO.......TTTTT............TTTTT.......OOOOO.....OOOOO..MMM..MMMMM..MMM.
+.BBBBB....BBBBBB...OOOOO...OOOOO........TTTTT............TTTTT........OOOOO...OOOOO...MMM..MMMMM..MMM.
+.BBBBBBBBBBBBBB....OOOOOOOOOOOOO........TTTTT............TTTTT........OOOOOOOOOOOOO...MMM...MMM...MMM.
+.BBBBBBBBBBBBB......OOOOOOOOOOO.........TTTTT............TTTTT.........OOOOOOOOOOO....MMM...MMM...MMM.
+.BBBBBBBBBBBB.........OOOOOOO...........TTTTT............TTTTT...........OOOOOOO......MMM....M....MMM.
+*/
+
+#sceneSelectIcon {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 56px;
+}
+
+.listDetailDiv {
+    border: 2px solid white;
 
     width: 80px;
-    height:80px;
+    height: 80px;
 
     background-size: cover;
     display: inline-block;
@@ -220,34 +106,66 @@ body {
     text-align: center;
 }
 
-.timeSpan{
+.timeSpan {
     font-size: 12px;
     color: white;
 }
 
-/* text input */
-.textInput{
-    border-style: none;
-    background: rgba(0,0,0,0.6);
-    color: #ff7200;
-    font-size: 14px;
-    padding:5px 10px;
-
-    z-index: 12;
+#toolbarBottomRight {
     position: absolute;
-    outline:none;
-    border-radius: 20px;
-    display: none;
+    right: 20px;
+    bottom: 20px;
 }
 
-/* measure div */
-#measureDiv{
-    position: fixed;
-    top:163px;
-    right:22px;
+.layerIcon {
+    position: relative;
+    width: 56px;
+    z-index: 12;
+    margin-left: 10px;
+}
 
-    width: 26px;
-    height:190px;
+/*
+.RRRRRRRRRRRR.....IIIIIIIIIIIIIII......GGGGGGGG.....HHHHH.....HHHHH..TTTTTTTTTTTTTTT.
+.RRRRRRRRRRRRR....IIIIIIIIIIIIIII.....GGGGGGGGGG....HHHHH.....HHHHH..TTTTTTTTTTTTTTT.
+.RRRRRRRRRRRRRR........IIIII.........GGGGG..GGGGG...HHHHH.....HHHHH..TTTTTTTTTTTTTTT.
+.RRRRR...RRRRRR........IIIII........GGGGG....GGGGG..HHHHH.....HHHHH.......TTTTT......
+.RRRRR...RRRRRR........IIIII.......GGGGG......GGGG..HHHHH.....HHHHH.......TTTTT......
+.RRRRR...RRRRRR........IIIII.......GGGGG............HHHHHHHHHHHHHHH.......TTTTT......
+.RRRRRRRRRRRRR.........IIIII.......GGGGG...GGGGGGG..HHHHHHHHHHHHHHH.......TTTTT......
+.RRRRRRRRRRRR..........IIIII.......GGGGG...GGGGGGG..HHHHHHHHHHHHHHH.......TTTTT......
+.RRRRR.RRRRRR..........IIIII.......GGGGG...GGGGGGG..HHHHH.....HHHHH.......TTTTT......
+.RRRRR..RRRRRR.........IIIII.......GGGGG......GGGG..HHHHH.....HHHHH.......TTTTT......
+.RRRRR..RRRRRR.........IIIII........GGGGG.....GGGG..HHHHH.....HHHHH.......TTTTT......
+.RRRRR...RRRRRR........IIIII........GGGGGGGGGGGGG...HHHHH.....HHHHH.......TTTTT......
+.RRRRR....RRRRRR..IIIIIIIIIIIIIII....GGGGGGGGGGG....HHHHH.....HHHHH.......TTTTT......
+.RRRRR.....RRRRR..IIIIIIIIIIIIIII......GGGGGGGG.....HHHHH.....HHHHH.......TTTTT......
+*/
+
+#toolbarTopRight {
+    position: absolute;
+    right: 10px;
+    top: 75px;
+    z-index: 20;
+}
+
+.toolbarTopRightIcon {
+    position: relative;
+    width: 56px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    z-index: 20;
+}
+
+.toolbarTopRightPanel {
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    position: relative;
+
+    width: 30px;
+
+    right: -13px;
     background-color: white;
     border-style: none;
     border-radius: 14px;
@@ -258,33 +176,143 @@ body {
     align-items: center;
     flex-wrap: nowrap;
 
+    z-index: 20;
+}
+
+.toolbarTopRightItem {
+    margin-bottom: 10px;
+    width: 26px;
+}
+
+.toolbarTopRightBack {
+    margin-bottom: 5px;
+    width: 25px;
+}
+
+#modelingList {
+    border: 1px solid black;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 30px;
+}
+
+.modelingListItemText {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 30px;
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.modelingListItemTextSelected {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 30px;
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: center;
+
+    background-color: lightgray;
+    color: blue;
+}
+
+.modelingListItemRemoveButton {
+    position: absolute;
+    right: -17px;
+    margin-top: -19px;
+    width: 12px;
+}
+
+/* color picker */
+#slider-wrapper {
+    width: 10px;
+    height: 150px;
+    position: relative;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
+#slider {
+    width: 4px;
+    height: 145px;
+    /*margin-top: 30px;*/
+    margin-left: 3px;
+}
+
+#slider-indicator {
+    width: 100%;
+    margin-right: 4px;
+
+    height: 10px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 2px rgba(100, 100, 100, 0.2);
+}
+
+/* selectDiv */
+#selectDiv {
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    right: 0px;
+
+    height: 100px;
+    width: 100%;
+
+    white-space: nowrap;
+    overflow-x: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    background-color: rgba(10, 10, 10, 0.7);
+
     z-index: 13;
 }
 
-#backMeasureImg{
-    width:22px;
-    margin-bottom: 10px;
-}
+/*
+.LLLLLL................AAAAA.......BBBBBBBBBBBB.....EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL...............AAAAAAA......BBBBBBBBBBBBB....EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL...............AAAAAAA......BBBBB....BBBBBB..EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL..............AAAAAAAAA.....BBBBB.....BBBBB..EEEEE............LLLLLL..........
+.LLLLLL..............AAAAAAAAA.....BBBBB....BBBBBB..EEEEE............LLLLLL..........
+.LLLLLL..............AAAAAAAAA.....BBBBBBBBBBBBBB...EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL.............AAAA...AAAA....BBBBBBBBBBBBB....EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL.............AAAA...AAAA....BBBBBBBBBBBBB....EEEEEEEEEEEEEEE..LLLLLL..........
+.LLLLLL.............AAAAAAAAAAA....BBBBB....BBBBBB..EEEEE............LLLLLL..........
+.LLLLLL............AAAAAAAAAAAAA...BBBBB.....BBBBB..EEEEE............LLLLLL..........
+.LLLLLL............AAAAAAAAAAAAA...BBBBB....BBBBBB..EEEEE............LLLLLL..........
+.LLLLLLLLLLLLLLL...AAAA.....AAAA...BBBBBBBBBBBBBB...EEEEEEEEEEEEEEE..LLLLLLLLLLLLLLL.
+.LLLLLLLLLLLLLLL..AAAAA.....AAAAA..BBBBBBBBBBBBB....EEEEEEEEEEEEEEE..LLLLLLLLLLLLLLL.
+.LLLLLLLLLLLLLLL..AAAA.......AAAA..BBBBBBBBBBBB.....EEEEEEEEEEEEEEE..LLLLLLLLLLLLLLL.
+*/
 
-#distanceImg{
-    width: 24px;
-    margin-bottom: 15px;
-    margin-top: 10px;
-}
+/* text input */
+.textInput {
+    border-style: none;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ff7200;
+    font-size: 14px;
+    padding: 5px 10px;
 
-#heightImg{
-    width: 24px;
-    margin-bottom: 15px;
-}
-
-#areaImg{
-    width: 24px;
-    margin-bottom: 15px;
+    z-index: 12;
+    position: absolute;
+    outline: none;
+    border-radius: 20px;
+    display: none;
 }
 
 /* 悬浮div样式 */
 .amap-ranging-label {
-    position:absolute;
+    position: absolute;
     /*width: 24px;*/
     display: inline;
     font-size: 12px;
@@ -293,16 +321,16 @@ body {
     border: solid 1px #ccc;
     padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:12;
+    z-index: 12;
 }
 
-.delimg{
+.delimg {
     margin-bottom: -3px;
 }
 
 /* 纯文字：单击以确定起点 */
-.clickSetStart{
-    position:absolute;
+.clickSetStart {
+    position: absolute;
     display: inline;
     font-size: 12px;
     line-height: 14px;
@@ -310,11 +338,11 @@ body {
     border: solid 1px #ccc;
     padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:12;
+    z-index: 12;
 }
 
 /* 红色圆圈 */
-.pointDiv{
+.pointDiv {
     width: 12px;
     height: 12px;
     overflow: hidden;
@@ -323,8 +351,8 @@ body {
 }
 
 /* 每一个的长度label */
-.pointLabel{
-    position:absolute;
+.pointLabel {
+    position: absolute;
     display: inline;
     font-size: 12px;
     line-height: 12px;
@@ -332,26 +360,26 @@ body {
     border: solid 1px #ccc;
     padding: 3px 7px 3px 2px;
     white-space: nowrap;
-    z-index:12;
+    z-index: 12;
     text-align: center;
 }
 
-.destroyImg{
-    width:12px;
+.destroyImg {
+    width: 12px;
     margin-left: 4px;
 }
 
 /* arrow_box 三角箭头样式 */
-.arrow_box{
+.arrow_box {
     position: absolute;
-    left:50px;
-    top:50px;
-    padding:5px 10px;
+    left: 50px;
+    top: 50px;
+    padding: 5px 10px;
 
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     display: inline;
     font-size: 14px;
-    color:#ff7200;
+    color: #ff7200;
 
     border-radius: 20px;
     border-style: none;
@@ -359,14 +387,14 @@ body {
 
 }
 
-.text_delimg{
+.text_delimg {
     margin-bottom: -3px;
-    width:16px;
+    width: 16px;
 }
 
-.arrow_box:after, .arrow_box:before{
-    top:100%;
-    left:50%;
+.arrow_box:after, .arrow_box:before {
+    top: 100%;
+    left: 50%;
     border: solid transparent;
     content: "";
     height: 0;
@@ -375,9 +403,9 @@ body {
     pointer-events: none;
 }
 
-.arrow_box:before{
-    border-color: rgba(194,225,245,0);
-    border-top-color: rgba(0,0,0,0.6);
+.arrow_box:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-top-color: rgba(0, 0, 0, 0.6);
     border-width: 10px;
     margin-left: -10px;
 }
